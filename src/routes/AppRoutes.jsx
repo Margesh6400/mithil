@@ -1,22 +1,23 @@
-// routes/AppRoutes.jsx
-import React from "react";
-import { Routes, Route } from "react-router-dom";
-import Onboarding from "../pages/Onboarding";
-import Dashboard from "../pages/Dashboard";
-import DailyCheckIn from "../pages/DailyCheckIn";
-import DailyReport from "../pages/DailyReport";
-import MainReport from "../pages/MainReport";
-import Profile from "../pages/Profile";
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import Home from '../pages/Home';
+import SignIn from '../pages/SignIn';
+import SignUp from '../pages/SignUp';
+import BookingPage from '../pages/BookingPage';
+import PaymentPage from '../pages/PaymentPage';
+import BookingConfirmation from '../pages/BookingConfirmation';
 
-const AppRoutes = () => (
-  <Routes>
-    <Route path="/" element={<Dashboard />} />
-    <Route path="/onboarding" element={<Onboarding />} />
-    <Route path="/checkin" element={<DailyCheckIn />} />
-    <Route path="/daily-report" element={<DailyReport />} />
-    <Route path="/main-report" element={<MainReport />} />
-    <Route path="/profile" element={<Profile />} />
-  </Routes>
-);
+const AppRoutes = () => {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/signin" element={<SignIn />} />
+      <Route path="/signup" element={<SignUp />} />
+      <Route path="/book/:movieId" element={<BookingPage />} />
+      <Route path="/payment" element={<PaymentPage />} />
+      <Route path="/booking-confirmation" element={<BookingConfirmation />} />
+    </Routes>
+  );
+};
 
 export default AppRoutes;
